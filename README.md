@@ -30,7 +30,7 @@ run this inside the folder with the vcf files
 #SBATCH --job-name=abba
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --time=12:00:00
+#SBATCH --time=4:00:00
 #SBATCH --mem=32gb
 #SBATCH --output=abba.%J.out
 #SBATCH --error=abba.%J.err
@@ -45,11 +45,12 @@ run this inside the folder with the vcf files
 
 module load StdEnv/2020
 module load vcftools/0.1.16
+module load intel/2020.1.217 bcftools/1.11
 
-vcf-merge DB_chr1L_positions_excluded.vcf.recode.vcf.gz DB_chr1S_positions_excluded.vcf.recode.vcf.gz DB_chr2L_positions_excluded.vcf.recode.vcf.gz DB_chr2S_positions_excluded.vcf.recode.vcf.gz DB_chr3L_positions_excluded.vcf.recode.vcf.gz DB_chr3S_positions_excluded.vcf.recode.vcf.gz DB_chr4L_positions_excluded.vcf.recode.vcf.gz DB_chr4S_positions_excluded.vcf.recode.vcf.gz DB_chr5L_positions_excluded.vcf.recode.vcf.gz DB_chr5S_positions_excluded.vcf.recode.vcf.gz DB_chr6L_positions_excluded.vcf.recode.vcf.gz DB_chr6S_positions_excluded.vcf.recode.vcf.gz DB_chr7L_positions_excluded.vcf.recode.vcf.gz DB_chr7S_positions_excluded.vcf.recode.vcf.gz DB_chr8L_positions_excluded.vcf.recode.vcf.gz DB_chr8S_positions_excluded.vcf.recode.vcf.gz DB_chr9L_positions_excluded.vcf.recode.vcf.gz DB_chr9S_positions_excluded.vcf.recode.vcf.gz | bgzip -c > l_and_s.vcf.gz
 
-vcf-merge DB_chr1L_positions_excluded.vcf.recode.vcf.gz DB_chr2L_positions_excluded.vcf.recode.vcf.gz DB_chr3L_positions_excluded.vcf.recode.vcf.gz DB_chr4L_positions_excluded.vcf.recode.vcf.gz DB_chr5L_positions_excluded.vcf.recode.vcf.gz DB_chr6L_positions_excluded.vcf.recode.vcf.gz DB_chr7L_positions_excluded.vcf.recode.vcf.gz DB_chr8L_positions_excluded.vcf.recode.vcf.gz DB_chr9L_positions_excluded.vcf.recode.vcf.gz | bgzip -c > l_only.vcf.gz
+bcftools concat DB_chr1L_positions_excluded.vcf.recode.vcf.gz DB_chr1S_positions_excluded.vcf.recode.vcf.gz DB_chr2L_positions_excluded.vcf.recode.vcf.gz DB_chr2S_positions_excluded.vcf.recode.vcf.gz DB_chr3L_positions_excluded.vcf.recode.vcf.gz DB_chr3S_positions_excluded.vcf.recode.vcf.gz DB_chr4L_positions_excluded.vcf.recode.vcf.gz DB_chr4S_positions_excluded.vcf.recode.vcf.gz DB_chr5L_positions_excluded.vcf.recode.vcf.gz DB_chr5S_positions_excluded.vcf.recode.vcf.gz DB_chr6L_positions_excluded.vcf.recode.vcf.gz DB_chr6S_positions_excluded.vcf.recode.vcf.gz DB_chr7L_positions_excluded.vcf.recode.vcf.gz DB_chr7S_positions_excluded.vcf.recode.vcf.gz DB_chr8L_positions_excluded.vcf.recode.vcf.gz DB_chr8S_positions_excluded.vcf.recode.vcf.gz DB_chr9L_positions_excluded.vcf.recode.vcf.gz DB_chr9S_positions_excluded.vcf.recode.vcf.gz -o ../test_combine/l_and_s.vcf.gz
 
-vcf-merge DB_chr1S_positions_excluded.vcf.recode.vcf.gz DB_chr2S_positions_excluded.vcf.recode.vcf.gz DB_chr3S_positions_excluded.vcf.recode.vcf.gz DB_chr4S_positions_excluded.vcf.recode.vcf.gz DB_chr5S_positions_excluded.vcf.recode.vcf.gz DB_chr6S_positions_excluded.vcf.recode.vcf.gz DB_chr7S_positions_excluded.vcf.recode.vcf.gz DB_chr8S_positions_excluded.vcf.recode.vcf.gz DB_chr9S_positions_excluded.vcf.recode.vcf.gz | bgzip -c > s_only.vcf.gz
+bcftools concat DB_chr1L_positions_excluded.vcf.recode.vcf.gz DB_chr2L_positions_excluded.vcf.recode.vcf.gz DB_chr3L_positions_excluded.vcf.recode.vcf.gz DB_chr4L_positions_excluded.vcf.recode.vcf.gz DB_chr5L_positions_excluded.vcf.recode.vcf.gz DB_chr6L_positions_excluded.vcf.recode.vcf.gz DB_chr7L_positions_excluded.vcf.recode.vcf.gz DB_chr8L_positions_excluded.vcf.recode.vcf.gz DB_chr9L_positions_excluded.vcf.recode.vcf.gz -o ../test_combine/l_only.vcf.gz
 
+bcftools concat DB_chr1S_positions_excluded.vcf.recode.vcf.gz DB_chr2S_positions_excluded.vcf.recode.vcf.gz DB_chr3S_positions_excluded.vcf.recode.vcf.gz DB_chr4S_positions_excluded.vcf.recode.vcf.gz DB_chr5S_positions_excluded.vcf.recode.vcf.gz DB_chr6S_positions_excluded.vcf.recode.vcf.gz DB_chr7S_positions_excluded.vcf.recode.vcf.gz DB_chr8S_positions_excluded.vcf.recode.vcf.gz DB_chr9S_positions_excluded.vcf.recode.vcf.gz -o ../test_combine/s_only.vcf.gz
 ```
