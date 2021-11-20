@@ -54,3 +54,7 @@ bcftools concat DB_chr1L_positions_excluded.vcf.recode.vcf.gz DB_chr2L_positions
 
 bcftools concat DB_chr1S_positions_excluded.vcf.recode.vcf.gz DB_chr2S_positions_excluded.vcf.recode.vcf.gz DB_chr3S_positions_excluded.vcf.recode.vcf.gz DB_chr4S_positions_excluded.vcf.recode.vcf.gz DB_chr5S_positions_excluded.vcf.recode.vcf.gz DB_chr6S_positions_excluded.vcf.recode.vcf.gz DB_chr7S_positions_excluded.vcf.recode.vcf.gz DB_chr8S_positions_excluded.vcf.recode.vcf.gz DB_chr9S_positions_excluded.vcf.recode.vcf.gz -o ../test_combine/s_only.vcf.gz
 ```
+check sample list if needed
+```
+bcftools query -l l_and_s.vcf.gz
+```
