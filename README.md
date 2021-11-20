@@ -60,11 +60,11 @@ bcftools query -l l_and_s.vcf.gz
 ```
 remove extra samples
 ```bash
-vcftools --remove-indv BJE2897_Lendu_TTCCTGGA_cuttrim_sorted.bam --remove-indv BJE3252_Cameroon_TATCGGGA_cuttrim_sorted.bam --remove-indv RT5_Botsw_GGATTGGT_cuttrim_sorted.bam --remove-indv amnh17260_Nigeria_GTGAGGGT_cuttrim_sorted.bam --gzvcf l_and_s.vcf.gz --out ../extra_samples_removed_VCFs/samples_removed_l_and_s.vcf.gz
+vcftools --remove-indv BJE2897_Lendu_TTCCTGGA_cuttrim_sorted.bam --remove-indv BJE3252_Cameroon_TATCGGGA_cuttrim_sorted.bam --remove-indv RT5_Botsw_GGATTGGT_cuttrim_sorted.bam --remove-indv amnh17260_Nigeria_GTGAGGGT_cuttrim_sorted.bam --gzvcf l_and_s.vcf.gz --out ../extra_samples_removed_VCFs/samples_removed_l_and_s.vcf.gz --recode
 
-vcftools --remove-indv BJE2897_Lendu_TTCCTGGA_cuttrim_sorted.bam --remove-indv BJE3252_Cameroon_TATCGGGA_cuttrim_sorted.bam --remove-indv RT5_Botsw_GGATTGGT_cuttrim_sorted.bam --remove-indv amnh17260_Nigeria_GTGAGGGT_cuttrim_sorted.bam --gzvcf l_only.vcf.gz --out ../extra_samples_removed_VCFs/samples_removed_l_only.vcf.gz
+vcftools --remove-indv BJE2897_Lendu_TTCCTGGA_cuttrim_sorted.bam --remove-indv BJE3252_Cameroon_TATCGGGA_cuttrim_sorted.bam --remove-indv RT5_Botsw_GGATTGGT_cuttrim_sorted.bam --remove-indv amnh17260_Nigeria_GTGAGGGT_cuttrim_sorted.bam --gzvcf l_only.vcf.gz --out ../extra_samples_removed_VCFs/samples_removed_l_only.vcf.gz --recode
 
-vcftools --remove-indv BJE2897_Lendu_TTCCTGGA_cuttrim_sorted.bam --remove-indv BJE3252_Cameroon_TATCGGGA_cuttrim_sorted.bam --remove-indv RT5_Botsw_GGATTGGT_cuttrim_sorted.bam --remove-indv amnh17260_Nigeria_GTGAGGGT_cuttrim_sorted.bam --gzvcf s_only.vcf.gz --out ../extra_samples_removed_VCFs/samples_removed_s_only.vcf.gz
+vcftools --remove-indv BJE2897_Lendu_TTCCTGGA_cuttrim_sorted.bam --remove-indv BJE3252_Cameroon_TATCGGGA_cuttrim_sorted.bam --remove-indv RT5_Botsw_GGATTGGT_cuttrim_sorted.bam --remove-indv amnh17260_Nigeria_GTGAGGGT_cuttrim_sorted.bam --gzvcf s_only.vcf.gz --out ../extra_samples_removed_VCFs/samples_removed_s_only.vcf.gz --recode
 ```
 
 
