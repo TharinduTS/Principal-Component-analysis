@@ -67,5 +67,19 @@ vcftools --remove-indv BJE2897_Lendu_TTCCTGGA_cuttrim_sorted.bam --remove-indv B
 vcftools --remove-indv BJE2897_Lendu_TTCCTGGA_cuttrim_sorted.bam --remove-indv BJE3252_Cameroon_TATCGGGA_cuttrim_sorted.bam --remove-indv RT5_Botsw_GGATTGGT_cuttrim_sorted.bam --remove-indv amnh17260_Nigeria_GTGAGGGT_cuttrim_sorted.bam --gzvcf s_only.vcf.gz --out ../extra_samples_removed_VCFs/samples_removed_s_only.vcf.gz --recode
 ```
 
+get a list of samples and populations in the same order as in vcf file
+
+then you can make them seperated by commas and add invited commas using word find and replace
+
+find
+```text
+^p
+```
+replace
+```txt
+","
+```
+
+****** edit the very begining and end before using
 
 
